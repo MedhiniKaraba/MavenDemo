@@ -11,7 +11,7 @@ pipeline{
 		}
 		stage('Build'){
 			steps{
-				sh 'mvn clean install'
+				sh 'mvn clean package'
 			}
 		}
 		stage('Test'){
@@ -21,7 +21,7 @@ pipeline{
 		}
 		stage('Run Application'){
 			steps{
-				sh 'java -jar MavenDemo-1.0-SNAPSHOT.jar'
+				sh 'java -jar target/MavenDemo-1.0-SNAPSHOT.jar'
 			}
 		}
 	}
